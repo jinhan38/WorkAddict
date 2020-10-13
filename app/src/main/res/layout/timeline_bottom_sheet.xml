@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_round_30"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/timeLineBottomSheetWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/seeCategoryListInMap"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/button_ripple_effect"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/seeCategoryInMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center|left"
+                    android:text="실행"
+                    android:textSize="@dimen/font_title_x"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="TimeLine의 실행 여부를 체크하세요"
+                    android:textSize="@dimen/font_default"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seeCategoryInMap" />
+
+                <Switch
+                    android:id="@+id/switchActionTimeLine"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="20dp"
+                    android:checked="false"
+                    android:switchMinWidth="50dp"
+                    android:theme="@style/SwitchTheme"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/soft_gray" />
+
+
+            <LinearLayout
+                android:id="@+id/editButtonWrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_ripple_effect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/timeLineChange"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:clickable="false"
+                    android:gravity="bottom|left"
+                    android:paddingLeft="20dp"
+                    android:text="수정"
+                    android:textSize="@dimen/font_title_x" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:clickable="false"
+                    android:text="TimeLine의 내용을 수정하세요"
+                    android:textSize="@dimen/font_default" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/soft_gray" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/timeLineDelete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_ripple_effect"
+                android:clickable="true"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:text="삭제"
+                android:textSize="@dimen/font_title_x" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

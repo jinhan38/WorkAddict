@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MyPageFragment.TermsFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/termsFirstWrap"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/myPageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="서비스 이용약관 동의"
+                    android:textSize="@dimen/font_default"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:padding="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:clickable="false"
+                    android:src="@drawable/arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/soft_gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/termsSecondWrap"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/myPageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보 수집 및 이용안내에 동의"
+                    android:textSize="@dimen/font_default"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:padding="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:clickable="false"
+                    android:src="@drawable/arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/soft_gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/termsThirdWrap"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/myPageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보의 제3자 제공에 동의"
+                    android:textSize="@dimen/font_default"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:padding="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:clickable="false"
+                    android:src="@drawable/arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/soft_gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/termsFourthWrap"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/myPageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="광고성 정보수신에 동의"
+                    android:textSize="@dimen/font_default"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:padding="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="false"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

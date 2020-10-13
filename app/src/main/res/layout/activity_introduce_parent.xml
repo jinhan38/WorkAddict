@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Introduce.IntroduceParent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/introduceIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/skipTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="60dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/back_border_black"
+            android:layout_marginRight="20dp"
+            android:text="Skip"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/appStartTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:background="@drawable/back_border_black"
+            android:paddingHorizontal="70dp"
+            android:paddingVertical="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="일중독 시작하기"
+            android:textColor="@color/black" />
+
+    </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/introduceTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@drawable/tab_dot"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
+
+</LinearLayout>

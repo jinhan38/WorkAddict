@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_round_30"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seeCategoryListInMap"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/button_ripple_effect"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/seeCategoryInMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center|left"
+            android:text="지도에서 보기"
+            android:textSize="@dimen/font_title_x"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="이 리스트의 장소를 지도에 표시합니다."
+            android:textSize="@dimen/font_default"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seeCategoryInMap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/soft_gray" />
+
+    <TextView
+        android:id="@+id/categoryNameChange"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/button_ripple_effect"
+        android:clickable="true"
+        android:gravity="center|left"
+        android:paddingLeft="20dp"
+        android:text="수정"
+        android:textSize="@dimen/font_title_x" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/soft_gray" />
+
+    <TextView
+        android:id="@+id/categoryNameDelete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/button_ripple_effect"
+        android:clickable="true"
+        android:gravity="center|left"
+        android:paddingLeft="20dp"
+        android:text="삭제"
+        android:textSize="@dimen/font_title_x" />
+
+</LinearLayout>

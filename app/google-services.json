@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "478805682864",
+    "firebase_url": "https://workaddict.firebaseio.com",
+    "project_id": "workaddict",
+    "storage_bucket": "workaddict.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478805682864:android:e64abd2795a1384f22e975",
+        "android_client_info": {
+          "package_name": "com.example.workaddict"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478805682864-ban6h47b51qjtho25h9gmqu13jeg5364.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.workaddict",
+            "certificate_hash": "431edf9636f180d7324e7e8402125eb2a1fd80f8"
+          }
+        },
+        {
+          "client_id": "478805682864-auf8tkj6kat27p5eqsppc71al0fbpr0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdr6nL-HONzDVICwgwLGw6PtiuPlAc5y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478805682864-auf8tkj6kat27p5eqsppc71al0fbpr0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

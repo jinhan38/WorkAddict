@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/basic_background">
+
+
+            <!-- 툴바 끝-->
+            <FrameLayout
+                android:id="@+id/mapPage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                tools:visibility="visible">
+
+                <!--    맵 페이지 시작 -->
+                <FrameLayout
+                    android:id="@+id/llMapPage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/basic_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/mapViewContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <FrameLayout
+                        android:id="@+id/mapPageSearchBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/back_transparent_round"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:weightSum="10"
+                        tools:visibility="visible">
+
+                        <EditText
+                            android:id="@+id/etSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="30dp"
+                            android:gravity="center_vertical"
+                            android:hint="주소를 검색하세요"
+                            android:imeOptions="actionSearch"
+                            android:paddingLeft="5dp"
+                            android:paddingEnd="50dp"
+                            android:singleLine="true"
+                            android:textSize="@dimen/font_big" />
+
+                        <ImageButton
+                            android:id="@+id/IbSearchClose"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="40dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/close_gray"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <ImageButton
+                            android:id="@+id/btSearch"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:gravity="center"
+                            android:src="@drawable/search"
+                            android:text="검색" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/currentPlaceSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center|top"
+                        android:layout_marginTop="55dp"
+                        android:background="@drawable/button_ripple_effect_corner"
+                        android:drawableLeft="@drawable/renew"
+                        android:drawablePadding="5dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="현 지도에서 검색"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:id="@+id/mapPageZoomBox"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/layout_shadow"
+                                android:orientation="vertical">
+
+                                <ImageButton
+                                    android:id="@+id/btnPlus"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:elevation="10dp"
+                                    android:src="@drawable/plus_black" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.1dp"
+                                    android:background="@color/basic_background" />
+
+                                <ImageButton
+                                    android:id="@+id/btnMinus"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:elevation="10dp"
+                                    android:src="@drawable/minus_b" />
+
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageButton
+                                    android:id="@+id/btnUnClickedGps"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="bottom|left"
+                                    android:background="@drawable/layout_shadow"
+                                    android:src="@drawable/unclicked_gps" />
+
+                                <ImageButton
+                                    android:id="@+id/btnClickedGps"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_gravity="bottom|left"
+                                    android:background="@drawable/layout_shadow"
+                                    android:src="@drawable/clicked_gps"
+                                    android:visibility="gone" />
+
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:visibility="visible">
+
+                            <LinearLayout
+                                android:id="@+id/mapCategoryButtonWrap"
+                                android:layout_width="45dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/back_white_round_alpha"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/btnSeeMyCategory"
+                                app:layout_constraintRight_toRightOf="parent">
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryRed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_light_red"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryOrange"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_orange"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+                                <ImageButton
+                                    android:id="@+id/categoryYellow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_yellow"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryGreen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_green"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryBlue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_blue"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryIndigo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_indigo"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+
+                                <ImageButton
+                                    android:id="@+id/categoryPurple"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:background="@null"
+                                    android:src="@drawable/marker_purple"
+                                    android:visibility="visible"
+                                    tools:visibility="visible" />
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/btnSeeMyCategory"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:background="@drawable/back_white_round_alpha"
+                                android:padding="13dp"
+                                android:src="@drawable/category_icon"
+                                android:visibility="gone"
+                                tools:visibility="visible" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnClickedPlaceInfo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center|bottom"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/button_ripple_effect_corner"
+                            android:drawableLeft="@drawable/menu_black"
+                            android:elevation="200dp"
+                            android:gravity="center"
+                            android:paddingHorizontal="15dp"
+                            android:text="목록보기"
+                            android:textSize="15dp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            tools:visibility="visible" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:id="@+id/coordinatorBottomSheetWrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+
+                        <include
+                            android:id="@+id/clickedPlaceBottomSheet"
+                            layout="@layout/clicked_place_bottom_sheet"
+                            android:visibility="gone"
+                            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+
+                        <include
+                            android:id="@+id/placeListBottomSheet"
+                            layout="@layout/placelist_bottom_sheet"
+                            android:visibility="gone"
+                            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

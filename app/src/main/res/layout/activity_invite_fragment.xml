@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MyPageFragment.InviteFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/kakaoInvite"
+            style="@style/myPageText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                style="@style/myPageText"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="카카오톡으로 초대하기"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/soft_gray" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sendSMS"
+            style="@style/myPageText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                style="@style/myPageText"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="문자로 초대하기"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/soft_gray" />
+
+    </LinearLayout>
+</layout>

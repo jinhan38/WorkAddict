@@ -1,0 +1,31 @@
+<resources>
+    <string name="version">1.000</string>
+    <string name="app_name">WorkAddict</string>
+    <string name="title_activity_google_maps">Map</string>
+    <string name="map">지도</string>
+    <string name="list">장소목록</string>
+    <string name="timeline">타임라인</string>
+    <string name="faqEmail">jinhan38@naver.com</string>
+    <string name="faqEmailTitle">이메일 문의</string>
+    <string name="faqEmailContent">\n(문의에 관련된 스크린샷을 첨부해서 보내주신다면 더 빠른 처리가 가능합니다)\n\n\n\n\n\n\n\n
+        -----------------------------------------------\n\n\n\n
+    일중독은 문의에 포함된 개인정보를 수집 및 이용할 수 있습니다. 다만 이러한 정보는 답변을 위한 목적으로만 사용됩니다.
+        더 자세한 내용은 일중독 앱의 마이페이지에 있는 개인정보 처리방침을 참고하시기 바랍니다.\n\n감사합니다.</string>
+    <string name="mypage">마이페이지</string>
+    <string name="workAddict">일중독</string>
+    <string name="detail_see">상세보기</string>
+    <string name="addressURL">"https://dapi.kakao.com/"</string>
+    <string name="navi_install">카카오내비를 설치해주세요</string>
+    <string name="category">즐겨찾기</string>
+    <string name="favorite">즐겨찾기</string>
+    <string name="register_page_intro">필수 및 선택정보 전체를 동의하게 되며, 개별적으로도 선택하실 수 있습니다. 필수항목에 대해 동의를 거부하시는 경우에는 서비스는 이용이 불가능합니다.</string>
+    <string name="tv_term_1">[필수] 서비스 이용약관 동의</string>
+    <string name="tv_term_2">[필수] 개인정보 수집 및 이용안내에 동의</string>
+    <string name="tv_term_3">[필수] 개인정보의 제3자 제공에 동의</string>
+    <string name="tv_term_4">[선택] 광고성 정보수신에 동의</string>
+    <string name="facebook_app_id">302692064383494</string>
+    <string name="fb_login_protocol_scheme">fb302692064383494</string>
+    <string name="followQuestion">팔로우 시스템을 통해 친구들의 타임라인을 확인할 수 있습니다.
+    \n내가 팔로우 신청한 친구는 내 타임라인을 확인할 수 있고, </string>
+
+</resources>

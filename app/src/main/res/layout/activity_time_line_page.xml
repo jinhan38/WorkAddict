@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/basic_background"
+    android:orientation="vertical"
+    tools:context=".BottomFragment.TimeLinePage">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/basic_background">
+
+        <FrameLayout
+            android:id="@+id/timeLinePageWrap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/basic_background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.05"
+                android:src="@drawable/sandglass" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="45dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_timeline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/back_gray_round_4dp"
+                    android:enabled="false"
+                    android:letterSpacing="0.2"
+                    android:text="삭제"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/back_white_round"
+                android:hint="장소명을 검색해주세요"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textSize="@dimen/font_default"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/dateFilterClose"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/close_gray"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/btnSearchClose"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/close_gray"
+                android:visibility="gone"
+                tools:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/timelineSpinnerWrap"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/basic_background"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:weightSum="100"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/spinnerCategoryInTimeLine"
+                        android:layout_width="0dp"
+                        android:layout_weight="45"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="left"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_rightArrow"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_rightArrow"
+                        android:layout_width="0dp"
+                        android:layout_weight="10"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:padding="7dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/arrow_rigth"
+                        app:layout_constraintEnd_toStartOf="@+id/spinnerPlaceInTimeLine"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/spinnerCategoryInTimeLine" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPlaceInTimeLine"
+                        android:layout_width="0dp"
+                        android:layout_weight="45"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        app:layout_constraintEnd_toStartOf="@+id/timelineActionFilter"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/iv_rightArrow" />
+
+
+                </LinearLayout>
+
+
+                <ImageButton
+                    android:id="@+id/timelineActionFilter"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/timeline_filter_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addTimeLineButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="15dp"
+                android:src="@drawable/plus_black"
+                android:visibility="gone"
+                app:backgroundTint="#ffffff"
+                app:elevation="6dp"
+                app:fabSize="mini"
+                app:maxImageSize="24dp"
+                app:pressedTranslationZ="12dp"
+                tools:visibility="visible" />
+
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/timeLineSomeThingChangeWrap"
+            layout="@layout/timeline_something_change"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</LinearLayout>

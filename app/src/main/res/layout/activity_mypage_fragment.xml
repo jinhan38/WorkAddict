@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/myPageMenuTextWrap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/myPage"
+                    android:background="@color/basic_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/myPageID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="jinhan38@naver.com"
+                        android:textSize="@dimen/font_big"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/myPageName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="김진한"
+                        android:textSize="@dimen/font_big"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/myPageID" />
+
+                    <ImageView
+                        android:id="@+id/profile"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/profile_icon"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/myPageName" />
+
+                    <LinearLayout
+                        android:id="@+id/followsWrap"
+                        android:layout_width="200dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="visible"
+                        android:clickable="true"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:background="@drawable/btn_selector_white_round_10"
+                        app:layout_constraintLeft_toRightOf="@+id/profile"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/myPageName">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center"
+                            android:text="타임라인 공유"
+                            android:drawablePadding="10dp"
+                            android:clickable="false"
+                            android:background="@color/transparent"
+                            android:textColor="@color/black"
+                            android:drawableLeft="@drawable/timeline_black" />
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/followerCount"-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="0 \n팔로워"-->
+<!--                            android:textSize="@dimen/font_title"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/followingCount"-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="0 \n팔로잉"-->
+<!--                            android:textSize="@dimen/font_title"-->
+<!--                            android:textStyle="bold" />-->
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="@color/soft_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/notice"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            android:id="@+id/noticeText"
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="공지사항"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/noticeIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/noticeNewAlert"
+                            android:layout_width="5dp"
+                            android:layout_height="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/circle_red"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/noticeText"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/invite"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="초대"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/noticeIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/appInfo"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="앱정보"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/appInfoIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/question"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="문의"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/questionIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/setting"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="설정"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/settingIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/appVersion"
+                        style="@style/myPage"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <TextView
+                            android:id="@+id/textVersion"
+                            style="@style/myPageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/version"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/appVersionIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/versionUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/basic_background"
+                            android:gravity="center"
+                            android:paddingHorizontal="15dp"
+                            android:text="최신버전 사용중"
+                            android:textSize="@dimen/font_default"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/soft_gray" />
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/serviceTerms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="서비스 이용약관 및 개인정보 처리방침"
+                            android:textColor="@color/strong_gray"
+                            android:textSize="@dimen/font_small" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/myPageFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+    </ScrollView>
+</layout>

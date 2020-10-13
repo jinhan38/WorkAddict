@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/bottomSheetSomeThingEditBack"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/arrow_left_black" />
+
+    <EditText
+        android:id="@+id/bottomSheetSomeThingEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="5dp"
+        android:hint="수정할 내용을 입력하세요"
+        android:textSize="@dimen/font_big" />
+
+    <Button
+        android:id="@+id/btnChangeTimeLineSomeThing"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_selector_blue"
+        android:text="확인"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_title_xx" />
+
+</LinearLayout>

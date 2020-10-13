@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fl_all_wrap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <LinearLayout
+                    android:id="@+id/ll_activity_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="100">
+
+                    <!-- 툴바 시작-->
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        style="@style/ActionBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/holo_purple"
+                        app:theme="@style/ToolbarColoredBackArrow" />
+                    <!-- 툴바 끝-->
+
+                    <FrameLayout
+                        android:id="@+id/fl_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="100">
+
+                        <FrameLayout
+                            android:id="@+id/mapPage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:visibility="visible">
+
+                            <!--    맵 페이지 시작 -->
+                            <LinearLayout
+                                android:id="@+id/ll_map_page"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/map_page_searchBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="10">
+
+                                    <EditText
+                                        android:id="@+id/et_search"
+                                        android:layout_width="0dp"
+                                        android:imeOptions="actionSearch"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginHorizontal="30dp"
+                                        android:layout_weight="6"
+                                        android:gravity="center_vertical"
+                                        android:hint="주소를 검색하세요"
+                                        android:paddingLeft="10dp"
+                                        android:singleLine="true" />
+
+                                    <Button
+                                        android:id="@+id/bt_search"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="3"
+                                        android:gravity="center"
+                                        android:text="검색" />
+
+                                </LinearLayout>
+
+                                <include
+                                    android:id="@+id/map_view"
+                                    layout="@layout/activity_map" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/map_page_zoomBox"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|left"
+                                android:layout_margin="15dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/layout_shadow"
+                                    android:layout_marginBottom="10dp"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/btn_plus"
+                                        android:layout_width="45dp"
+                                        android:background="?attr/selectableItemBackgroundBorderless"
+                                        android:elevation="10dp"
+                                        android:layout_height="45dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:src="@drawable/plus_black" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.1dp"
+                                        android:background="@color/basic_background"/>
+
+                                    <ImageButton
+                                        android:id="@+id/btn_minus"
+                                        android:layout_width="45dp"
+                                        android:background="?attr/selectableItemBackgroundBorderless"
+                                        android:elevation="10dp"
+                                        android:layout_height="45dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/minus_b" />
+
+                                </LinearLayout>
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageButton
+                                        android:id="@+id/btn_unclickedgps"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_gravity="bottom|left"
+                                        android:background="@drawable/layout_shadow"
+                                        android:src="@drawable/unclicked_gps" />
+
+                                    <ImageButton
+                                        android:id="@+id/btn_clickedgps"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_gravity="bottom|left"
+                                        android:background="@drawable/layout_shadow"
+                                        android:src="@drawable/clicked_gps"
+                                        android:visibility="gone" />
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/btn_see_my_category"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:elevation="10dp"
+                                android:src="@drawable/ic_baseline_map_24"
+                                android:background="@drawable/ripple_oval"
+                                android:layout_gravity="bottom|right"
+                                android:layout_margin="10dp"/>
+
+                            <Button
+                                android:id="@+id/btn_clicked_place_info_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center|bottom"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/button_ripple_effect_corner"
+                                android:drawableLeft="@drawable/menu_black"
+                                android:elevation="200dp"
+                                android:gravity="center"
+                                android:paddingHorizontal="15dp"
+                                android:text="목록보기"
+                                android:textSize="15dp"
+                                android:visibility="visible" />
+
+                        </FrameLayout>
+
+                        <!--            List Page 시작-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_listPage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <LinearLayout
+                                android:id="@+id/ListPageTopFilter"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/btnFilterRecently"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:text="최신순" />
+
+                                <TextView
+                                    android:id="@+id/btnFilterName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:text="이름순" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="30dp"
+                                    android:gravity="center|right"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/spinnerCategory"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="40dp"
+                                        android:layout_marginRight="10dp"
+                                        android:gravity="center" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ListPageTopFilter"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:scrollbars="vertical" />
+
+                                <LinearLayout
+                                    android:id="@+id/optionMenu_bottom_button"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="#48070707"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone"
+                                    tools:visibility="visible">
+
+                                    <Button
+                                        android:id="@+id/btnComplete"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/btn_selector_blue"
+                                        android:letterSpacing="0.2"
+                                        android:text="확인"
+                                        android:textColor="@color/white"
+                                        android:textSize="15dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!--            List Page 끝-->
+
+
+                    </FrameLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_bottom_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_map"
+                            android:layout_width="0dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_default"
+                            android:background="@android:color/transparent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="50"
+                            android:text="Map" />
+
+                        <Button
+                            android:id="@+id/btn_list"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_default"
+                            android:background="@android:color/transparent"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="50"
+                            android:text="List" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <include layout="@layout/list_page_bottom_sheet" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navi_header"
+            app:menu="@menu/navi_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

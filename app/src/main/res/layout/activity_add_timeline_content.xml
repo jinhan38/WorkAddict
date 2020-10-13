@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/basic_background"
+        android:orientation="vertical">
+
+        <!-- 툴바 시작-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/addTimeLineToolbar"
+            style="@style/ActionBar"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/basic_background" />
+        <!-- 툴바 끝-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/categoryChoice"
+                layout="@layout/add_timeline_choice_category" />
+
+            <include
+                android:id="@+id/dateChoice"
+                layout="@layout/add_timeline_choice_date" />
+
+            <include
+                android:id="@+id/timePickerWrap"
+                layout="@layout/add_timeline_timepicker" />
+
+            <include
+                android:id="@+id/timeLineInputSomeThing"
+                layout="@layout/add_timeline_input_something" />
+
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</layout>

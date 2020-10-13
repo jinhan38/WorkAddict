@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MyPageFragment.ShowTermsText">
+
+        <LinearLayout
+            android:id="@+id/myPageToolbarWrap"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:paddingRight="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/basic_background"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:clickable="false"
+                android:src="@drawable/arrow_left_black" />
+
+            <TextView
+                android:id="@+id/termsDetailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:clickable="false"
+                android:elevation="5dp"
+                android:text="이용약관"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

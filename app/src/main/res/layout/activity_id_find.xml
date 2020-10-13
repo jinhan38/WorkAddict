@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/idFindEditTextWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/idFindPhone"
+                style="@style/editTextStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:hint="연락처(숫자만 입력해주세요)"
+                android:inputType="number"
+                android:maxLength="11" />
+
+            <EditText
+                android:id="@+id/idFindName"
+                style="@style/editTextStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:hint="이름"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idFindResultWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|bottom"
+                android:text="고객님의 아이디는"
+                android:textSize="@dimen/font_title" />
+
+            <TextView
+                android:id="@+id/idFindResult"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:gravity="center"
+                android:text="aaa@naver.com"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/idFindButtonWrap"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/back_purple_round_3dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarID"
+            style="@style/progressBar" />
+
+        <Button
+            android:id="@+id/idFindButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:letterSpacing="0.1"
+            android:text="아이디 찾기"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_title_x" />
+
+    </FrameLayout>
+
+</LinearLayout>

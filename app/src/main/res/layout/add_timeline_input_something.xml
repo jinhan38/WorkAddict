@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/inputTimeLineSomeThing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginHorizontal="15dp"
+                    android:hint="내용을 입력해주세요"
+                    android:textSize="@dimen/font_big" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/addTimelineImage"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    tools:visibility="visible"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
+                <ImageButton
+                    android:id="@+id/addTimelineDelete"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="10dp"
+                    android:src="@drawable/delete" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/addTimelineCamera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:padding="20dp"
+                        android:src="@drawable/camera_icon" />
+
+                    <ImageButton
+                        android:id="@+id/addTimelineGallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:padding="20dp"
+                        android:src="@drawable/gallery_icon" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="20dp">
+
+                <Button
+                    android:id="@+id/btnAddTimeLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:letterSpacing="0.1"
+                    android:background="@drawable/back_purple_round_3dp"
+                    android:text="확인"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_big" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

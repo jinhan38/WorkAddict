@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/basic_background"
+        tools:context=".MyPageFragment.QuestionActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/myPageToolbarWrap"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/basic_background"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:clickable="false"
+                    android:src="@drawable/arrow_left_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:clickable="false"
+                    android:elevation="5dp"
+                    android:text="문의"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/questionFAQ"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawableLeft="@drawable/question_icon_black_20"
+                android:drawablePadding="10dp"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:text="자주 묻는 질문"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/middle_gray" />
+
+            <TextView
+                android:id="@+id/questionMail"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawableLeft="@drawable/mail_black_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:text="메일 문의"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/middle_gray" />
+
+            <TextView
+                android:id="@+id/questionChat"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawableLeft="@drawable/chat_black_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:text="채팅 문의"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/middle_gray" />
+
+            <TextView
+                android:id="@+id/questionPhone"
+                style="@style/myPageText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawableLeft="@drawable/phone_black_icon"
+                android:drawablePadding="10dp"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
+                android:text="전화 문의"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/faqPhoneBottomSheet"
+            layout="@layout/activity_faq_phone_bottom_sheet"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+
+        <View
+            android:id="@+id/faqCoverView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#502E2D2D"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

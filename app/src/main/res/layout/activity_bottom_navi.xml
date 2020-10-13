@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/basic_background"
+                android:visibility="invisible">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/basic_background"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:visibility="visible">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/basic_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/toolbarAppNameWrap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingRight="20dp"
+                            android:visibility="visible"
+                            tools:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/ibMapPageBack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="10dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="5dp"
+                                android:src="@drawable/arrow_left_black"
+                                android:visibility="gone"
+                                tools:visibility="gone" />
+
+
+                            <TextView
+                                android:id="@+id/tvMapPageAppName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="15dp"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:elevation="5dp"
+                                android:text="@string/map"
+                                android:textColor="@color/black"
+                                android:textSize="25dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                        <!--                map 페이지 검색 버튼 옵션메뉴 -->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/MapOptionMenu"
+                            android:layout_width="250dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="right"
+                            android:visibility="visible"
+                            tools:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/searchMap"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="right"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/search"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                리스트 페이지 옵션메뉴-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/listOptionMenu"
+                            android:layout_width="250dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="right"
+                            android:visibility="gone"
+                            tools:visibility="gone">
+
+                            <ImageButton
+                                android:id="@+id/searchPlaceName"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="right"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/search"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/listPageOptionMenu"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/listPageOptionMenu"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/more_vert_black"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                리스트페이지 검색버튼 옵션메뉴-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/listSearchLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            tools:visibility="gone">
+
+                            <ImageButton
+                                android:id="@+id/listSearchBackButton"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/arrow_left_black"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/listSearchEditText"
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="60dp"
+                                android:layout_marginRight="30dp"
+                                android:hint="장소를 검색해주세요"
+                                android:textSize="@dimen/font_big"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/listSearchBackButton"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--            타임라인 옵션메뉴-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/timeLineOptionMenu"
+                            android:layout_width="250dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="right"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/toolbar_search"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="right"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/search"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/timelinePageOptionMenu"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/timelinePageOptionMenu"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/more_vert_black"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                마이페이지 옵션메뉴-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/myPageOptionMenu"
+                            android:layout_width="250dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="right"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/toolbarLogout"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="end"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/logout"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:visibility="gone" />
+
+                            <ImageButton
+                                android:id="@+id/followInviteButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:paddingHorizontal="15dp"
+                                android:src="@drawable/invite_icon_black"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="45dp"
+                    android:orientation="vertical">
+
+                    <com.example.workaddict.CustomViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/navView"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@color/navigation_bar_color"
+                        app:labelVisibilityMode="unlabeled"
+                        app:layout_behavior="tech.thdev.app.view.BottomNavigationBehavior"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:menu="@menu/bottom_nav_menu" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/progressWrap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:elevation="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/progressBar"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="current_gps_border">#491689E4</color>
+    <color name="current_gps_border_in">#211689E4</color>
+    <color name="pion_basic_soft_blue">#1376be</color>
+<!--    <color name="pion_basic_soft_blue">#1376be</color>-->
+    <color name="pion_basic_status_blue">#E72A34F8</color>
+    <color name="pion_basic_deep_blue">#223f93</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="my_red">#C70E0E</color>
+    <color name="my_red_light">#F73131</color>
+    <color name="hola_purple">#E51377</color>
+    <color name="basic_background">#FAFAFA</color>
+    <color name="navigation_bar_color">#F1EEEE</color>
+    <color name="basic_gray">#808080</color>
+    <color name="soft_gray">#E4E4E4</color>
+    <color name="middleSoft_gray">#50C8C6C6</color>
+    <color name="middle_gray">#889A9898</color>
+    <color name="strong_gray">#6C6B6B</color>
+    <color name="green">#4BFB4B</color>
+    <color name="default_text_color">#757575</color>
+    <color name="bright_blue">#5CB4FA</color>
+    <color name="base_text_color">#808080</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="verySoftPurple">#E0BAE6</color>
+    <color name="softPurple">#BD7FC8</color>
+    <color name="deepPurple">#873695</color>
+    <color name="indigo">#4b0082</color>
+    <color name="pink">#EA306F</color>
+<!--    <color name="softPurple">#D3A0DC</color>-->
+</resources>

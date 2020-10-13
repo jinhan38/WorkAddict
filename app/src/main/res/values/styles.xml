@@ -1,0 +1,133 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/softPurple</item>
+        <item name="colorPrimaryDark">@color/softPurple</item>
+        <item name="colorAccent">@color/softPurple</item>
+        <!-- No Title Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/basic_background</item>
+<!--        statusBar의 배경색깔-->
+        <item name="android:windowLightStatusBar">true</item>
+<!--        false로 하면 statusBar의 텍스트들이 하얀색이 됨-->
+<!--        true면 회색? 검은색?이 됨-->
+        <item name="android:windowBackground">@color/basic_background</item>
+<!--        <item name="android:windowBackground">@drawable/start_splash</item>-->
+<!--        <item name="android:navigationBarColor">@color/navigation_bar_color</item>-->
+<!--        아래 홈버튼이랑 뒤로가기 버튼의 배경색 조절-->
+    </style>
+
+
+
+
+    <style name="introduceStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <style name="tabLayout_textSize" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/app_logo</item>
+        <item name="colorPrimary">@color/basic_background</item>
+        <item name="colorPrimaryDark">@color/basic_background</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="FloatingTheme" parent="Theme.AppCompat">
+        <item name="android:windowBackground">#00BCD4</item>
+    </style>
+
+    <style name="ActionBar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">30dp</item>
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorPrimaryDark">#FFEB3B</item>
+        <item name="colorAccent">#4CAF50</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlActivated">@color/softPurple</item>
+    </style>
+
+    <style name="myPage">
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:background">@drawable/button_ripple_effect</item>
+    </style>
+
+    <style name="myPageText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="myPageIcon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+    
+    <style name="dividingLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="background">@color/middle_gray</item>
+    </style>
+
+
+
+    <style name="editTextStyle">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/back_basic_round_all_3dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="singleLine">true</item>
+        <item name="android:layout_marginHorizontal">40dp</item>
+        <item name="android:textSize">@dimen/font_title</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="progressBar" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:layout_width">@dimen/height_default</item>
+        <item name="android:layout_height">@dimen/height_default</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="myPageTermsText">
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:paddingHorizontal">30dp</item>
+        <item name="android:textColor">@color/strong_gray</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+
+    <style name="MyEditTextTheme">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">@color/softPurple</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent color by default -->
+    </style>
+
+</resources>

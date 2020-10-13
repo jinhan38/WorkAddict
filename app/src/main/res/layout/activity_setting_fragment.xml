@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MyPageFragment.SettingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/myPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/myPageText"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="마케팅 수신 동의"
+                android:textSize="@dimen/font_big"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Switch
+                android:id="@+id/marketingAgreement"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center|right"
+                android:checked="true"
+                android:paddingHorizontal="20dp"
+                android:switchMinWidth="50dp"
+                android:theme="@style/SwitchTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/soft_gray" />
+
+
+    </LinearLayout>
+</layout>

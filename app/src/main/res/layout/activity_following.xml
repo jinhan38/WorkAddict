@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/searchTextFollowing"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="5dp"
+            android:textSize="@dimen/font_default"
+            android:hint="이름이나 아이디를 검색해주세요"
+            android:layout_height="50dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFollowing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="5dp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+</layout>

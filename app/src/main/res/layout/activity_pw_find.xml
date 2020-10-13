@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/pwFindEditTextWrap"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            tools:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/pwFindID"
+                style="@style/editTextStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:hint="이메일 아이디"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/pwFindName"
+                style="@style/editTextStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:hint="이름"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pwFindResultWrap"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|bottom"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="5dp"
+                android:text="아래 이메일로 비밀번호 변경 메일을 발송했습니다. 메일을 확인하신 후 비밀번호를 변경해주시기 바랍니다."
+                android:textSize="@dimen/font_title" />
+
+            <TextView
+                android:id="@+id/pwFindResult"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="aaa@naver.com"
+                android:layout_marginHorizontal="40dp"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pwFindButtonWrap"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/back_purple_round_3dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarPW"
+            style="@style/progressBar" />
+
+        <Button
+            android:id="@+id/pwFindButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:letterSpacing="0.1"
+            android:text="비밀번호 찾기"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_title_x" />
+
+    </FrameLayout>
+
+</LinearLayout>

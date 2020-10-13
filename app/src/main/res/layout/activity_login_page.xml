@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".LoginPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--            로그인 View-->
+            <LinearLayout
+                android:id="@+id/loginViewWrap"
+                android:layout_width="match_parent"
+                android:background="@color/basic_background"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="40dp"
+                        android:src="@drawable/text_logo" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/etID"
+                        style="@style/editTextStyle"
+                        android:hint="아이디"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/etPW"
+                        style="@style/editTextStyle"
+                        android:layout_marginTop="15dp"
+                        android:hint="패스워드"
+                        android:inputType="textPassword" />
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxAutoLogin"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:checked="true"
+                        android:paddingVertical="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="자동로그인"
+                        android:textColor="@color/basic_gray"
+                        android:textSize="@dimen/font_default"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/findID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="50dp"
+                        android:background="@drawable/btn_selector_white"
+                        android:clickable="true"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="ID/PW 찾기"
+                        android:textSize="@dimen/font_default"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/loginButtonWrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/back_gray_round_4dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="@style/progressBar" />
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:text="로그인"
+                        android:textColor="@color/basic_gray"
+                        android:textSize="@dimen/font_title_x" />
+
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btn_moveToRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_purple_round_3dp"
+                    android:text="회원가입"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_title_x" />
+
+                <View
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/soft_gray"/>
+
+                <Button
+                    android:id="@+id/googleLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:elevation="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_selector_purple"
+                    android:drawableLeft="@drawable/google_icon_30"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="45dp"
+                    android:text="구글 로그인"
+                    android:textSize="@dimen/font_title" />
+
+
+                <Button
+                    android:id="@+id/facebookLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:elevation="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#3b5998"
+                    android:textColor="@color/white"
+                    android:drawableStart="@drawable/facebook_icon_30"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="45dp"
+                    android:text="페이스북 로그인"
+                    android:textSize="@dimen/font_title" />
+
+                <Button
+                    android:id="@+id/kakaoLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffe812"
+                    android:drawableStart="@drawable/kakao_icon_28"
+                    android:elevation="20dp"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="45dp"
+                    android:text="카카오 로그인"
+                    android:textSize="@dimen/font_title" />
+
+                <Button
+                    android:id="@+id/naverLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:elevation="20dp"
+                    android:background="#00bf18"
+                    android:drawableStart="@drawable/naver_icon_45"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="48dp"
+                    android:text="네이버 로그인"
+                    android:textSize="@dimen/font_title" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@color/basic_background"
+                    android:paddingVertical="20dp"
+                    android:visibility="gone">
+
+
+                    <ImageView
+                        android:id="@+id/googleLogin"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/ripple_oval_purple"
+                        android:padding="7dp"
+                        android:src="@drawable/google_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/facebookLogin"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/facebookLogin"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/ripple_oval_purple"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/facebook_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/kakaoLoginButton"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/googleLogin"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/ripple_oval_purple"
+                        android:padding="2dp"
+                        android:src="@drawable/kakao_icon"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/naverLoginButton"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/facebookLogin"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/ripple_oval_purple"
+                        android:padding="2dp"
+                        android:src="@drawable/naver_icon"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/kakaoLoginButton"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+            <!--            찾기 View-->
+            <include
+                android:id="@+id/findViewWrap"
+                layout="@layout/activity_id_pw_find"
+                android:visibility="gone"
+                tools:visibility="gone" />
+
+
+        </FrameLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

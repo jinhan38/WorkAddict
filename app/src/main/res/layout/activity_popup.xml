@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/text_line"
+    android:layout_height="wrap_content"
+
+    android:layout_gravity="center"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.NoActionBar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="@integer/preferences_left_pane_weight"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/softPurple" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/popup_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="10dp"
+                android:gravity="center|left"
+                android:paddingVertical="15dp"
+                android:paddingLeft="10dp"
+                android:text="장소명을 입력해주세요"
+                android:textColor="@color/basic_gray"
+                android:textSize="@dimen/font_title" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/basic_gray" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="15dp">
+
+            <EditText
+                android:id="@+id/et_place_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textSize="@dimen/font_big" />
+
+            <ImageButton
+                android:id="@+id/closeInputCategoryNameInPopup"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="50dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:src="@drawable/close_circle_black"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/categoryNameLengthInPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:textSize="@dimen/font_small"
+                android:layout_marginRight="10dp"
+                android:text="0/20"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/basic_gray" />
+
+    </LinearLayout>
+</LinearLayout>

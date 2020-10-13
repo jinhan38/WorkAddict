@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".RegisterPageTerms">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_big"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <ImageButton
+                android:id="@+id/ibtnBack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrow_left_black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"
+                android:gravity="center|left"
+                android:text="이용약관"
+                android:textSize="@dimen/font_big" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="13"
+                            android:gravity="center|right"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="10dp">
+
+                            <CheckBox
+                                android:id="@+id/checkBoxAll"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|left"
+                                android:paddingVertical="5dp"
+                                android:paddingLeft="10dp"
+                                android:text="전체 동의합니다."
+                                android:textColor="@color/basic_gray"
+                                android:textSize="@dimen/font_big" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:breakStrategy="balanced"
+                        android:inputType="textMultiLine"
+                        android:lineSpacingExtra="5dp"
+                        android:paddingHorizontal="30dp"
+                        android:text="@string/register_page_intro"
+                        android:textSize="@dimen/font_default" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="20dp"
+                android:background="@color/soft_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="78"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|right"
+                            android:paddingVertical="5dp"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:text="[필수] 서비스 이용약관 동의"
+                            android:textColor="@color/basic_gray"
+                            android:textSize="@dimen/font_default" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/seeTerms1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="22"
+                        android:background="@drawable/button_ripple_effect_purple"
+                        android:clickable="true"
+                        android:gravity="center|left"
+                        android:paddingVertical="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="약관보기"
+                        android:textSize="@dimen/font_default" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="78"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|left"
+                            android:paddingVertical="5dp"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:text="[필수] 개인정보 수집 및 이용안내에 동의"
+                            android:textColor="@color/basic_gray"
+                            android:textSize="@dimen/font_default" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/seeTerms2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="22"
+                        android:background="@drawable/button_ripple_effect_purple"
+                        android:clickable="true"
+                        android:gravity="center|left"
+                        android:paddingVertical="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="약관보기"
+                        android:textSize="@dimen/font_default" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="78"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|right"
+                            android:paddingVertical="5dp"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:text="[필수] 개인정보의 제3자 제공에 동의"
+                            android:textColor="@color/basic_gray"
+                            android:textSize="@dimen/font_default" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/seeTerms3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="22"
+                        android:background="@drawable/button_ripple_effect_purple"
+                        android:clickable="true"
+                        android:gravity="center|left"
+                        android:paddingVertical="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="약관보기"
+                        android:textSize="@dimen/font_default"
+                        tools:ignore="RtlHardcoded,RtlSymmetry,SpUsage" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="78"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|right"
+                            android:paddingVertical="5dp"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:text="[선택] 광고성 정보수신에 동의"
+                            android:textColor="@color/basic_gray"
+                            android:textSize="@dimen/font_default" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/seeTerms4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="22"
+                        android:background="@drawable/button_ripple_effect_purple"
+                        android:clickable="true"
+                        android:gravity="center|left"
+                        android:paddingVertical="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="약관보기"
+                        android:textSize="@dimen/font_default" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnNextInTerms"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/back_gray_round_3dp"
+                    android:elevation="50dp"
+                    android:text="회원가입"
+                    android:textColor="@android:color/white"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

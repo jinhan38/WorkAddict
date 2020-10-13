@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timelineItemWrap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/timelineCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/basic_background"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/timelineLeftViewBar"
+                    android:layout_width="6dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/timeLineBubble"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="10dp">
+
+                                    <TextView
+                                        android:id="@+id/placeNameTimeLine"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingVertical="3dp"
+                                        android:text="장소명"
+                                        android:textSize="@dimen/font_title" />
+
+                                    <TextView
+                                        android:id="@+id/date"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="10:45"
+                                        android:textSize="@dimen/font_default" />
+
+                                    <TextView
+                                        android:id="@+id/someThingTimeLine"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:breakStrategy="balanced"
+                                        android:lineSpacingExtra="3dp"
+                                        android:paddingVertical="3dp"
+                                        android:text="내용"
+                                        android:textSize="@dimen/font_default" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/timelineEditWrap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="top"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/timelineEditButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="10dp"
+                                android:src="@drawable/edit_soft" />
+
+                            <ImageView
+                                android:id="@+id/timelineGalleryButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:padding="10dp"
+                                android:src="@drawable/gallery_gray" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/timeLineImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:clickable="false"
+                        android:visibility="visible"
+                        tools:visibility="visible" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/timeLineCheckBoxWrap"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <CheckBox
+            android:id="@+id/timelineCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/checkbox_custom"
+            android:checked="false"
+            android:clickable="false"
+            android:gravity="center"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

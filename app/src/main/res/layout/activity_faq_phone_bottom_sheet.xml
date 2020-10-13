@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/back_round_top_30"
+    android:elevation="50dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    app:behavior_hideable="true"
+    android:weightSum="100"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="50">
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="5dp"
+            android:textSize="@dimen/font_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일중독 고객센터로 전화를 연결합니다.\n(상담시간 : am9:00 ~ pm6:00)"/>
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="50"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/faqPhoneCancel"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:background="@drawable/back_gray_round_4dp"
+            android:text="취소"
+            android:textColor="@color/softPurple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/faqPhoneConnect"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/faqPhoneConnect"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:background="@drawable/back_purple_round_3dp"
+            android:text="전화연결"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/faqPhoneCancel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
