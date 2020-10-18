@@ -86,7 +86,7 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
     //    private TextView dateFilterText;
     private ImageView dateFilterClose;
     private boolean isOpenDateFilter = false;
-    public FloatingActionButton addTimeLineButton;
+    public ImageButton addTimeLineButton;
     public ImageButton timelineActionFilter;
     private TimeLineCalendarPopup timeLineCalendarPopup;
     public String filterSelectedDate = "";
@@ -116,6 +116,8 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
     private final int TIMELINE_FILTER_ACTION_N = 2;
     private final int TIMELINE_FILTER_ACTION_Y = 3;
     private int current_timeline_filter_num = 0;
+    private LinearLayout zeroPage;
+    private ImageButton addTimelineButtonFirst;
 
     public static TimeLinePage newInstance() {
         if (singlton == null) {
@@ -130,14 +132,29 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.activity_time_line_page, container, false);
 
-        Log.e(TAG, "onCreateView: 사이즈 : " + BottomNavi.timeLines.size());
-//        if (BottomNavi.timeLines.size() > 0) {
-            Log.e(TAG, "onCreateView: 사이즈 0 이상");
-            initView();
-            setupListener();
-//        }
+        Log.e(TAG, "onCreateView: 사이즈 0 이상");
+        initView();
+        setupListener();
+        timelineSizeCheck();
 
         return v;
+    }
+
+
+    public void timelineSizeCheck() {
+
+        if (BottomNavi.timeLines.size() == 0) {
+            zeroPage.setVisibility(View.VISIBLE);
+            timeLinePageWrap.setVisibility(View.GONE);
+            v.findViewById(R.id.addTimelineButtonFirst).setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), AddTimeLineContent.class);
+                intent.putExtra("pageType", "1");
+                startActivity(intent);
+            });
+        } else {
+            zeroPage.setVisibility(View.GONE);
+            timeLinePageWrap.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -164,6 +181,9 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
 
         addTimeLineButton = v.findViewById(R.id.addTimeLineButton);
         timelineActionFilter = v.findViewById(R.id.timelineActionFilter);
+
+        zeroPage = v.findViewById(R.id.addTimelineFirstPage);
+        addTimelineButtonFirst = v.findViewById(R.id.addTimelineButtonFirst);
 
         if (BottomNavi.timeLines.size() > 0) {
             addTimeLineButton.setVisibility(View.VISIBLE);
@@ -343,33 +363,32 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
             return true;
         });
 
-        recyclerView_timeline.addOnScrollListener(new RecyclerView.OnScrollListener() {
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-
-                if (!adapter.createAdapter) {
-
-                    if (!isOpenCheckBox) {
-
-                        if (dy > 0) { // 아래로 스크롤하면 +
-                            addTimeLineButton.hide();
-                        } else { //위로 스크롤하면 -
-                            addTimeLineButton.show();
-                        }
-
-                    }
-
-                } else {
-
-                    addTimeLineButton.show();
-                    adapter.createAdapter = false;
-                }
-
-
-                super.onScrolled(recyclerView, dx, dy);
-            }
-        });
+//        recyclerView_timeline.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//
+//            @Override
+//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//
+//                if (!adapter.createAdapter) {
+//
+//                    if (!isOpenCheckBox) {
+//
+//                        if (dy > 0) { // 아래로 스크롤하면 +
+//                            addTimeLineButton.hide();
+//                        } else { //위로 스크롤하면 -
+//                            addTimeLineButton.show();
+//                        }
+//
+//                    }
+//
+//                } else {
+//
+//                    addTimeLineButton.show();
+//                    adapter.createAdapter = false;
+//                }
+//
+//                super.onScrolled(recyclerView, dx, dy);
+//            }
+//        });
 
     }
 
@@ -501,14 +520,14 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
      * @param timeLines
      */
     public void setAdapter(ArrayList<TimeLine> timeLines) {
-        Log.e(TAG, "setAdapter: 진입" );
+        Log.e(TAG, "setAdapter: 진입");
         if (timeLines != null) {
 
-            Log.e(TAG, "setAdapter: 타임라인 not null" );
+            Log.e(TAG, "setAdapter: 타임라인 not null");
             if (timeLines.size() > 0) {
-                Log.e(TAG, "setAdapter: 사이즈 있음" );
+                Log.e(TAG, "setAdapter: 사이즈 있음");
                 if (recyclerView_timeline == null) {
-                    Log.e(TAG, "setAdapter: recyclerview null" );
+                    Log.e(TAG, "setAdapter: recyclerview null");
                     initView();
                     setupListener();
                 }
@@ -604,6 +623,8 @@ public class TimeLinePage extends Fragment implements View.OnClickListener, Back
         AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
         View view = LayoutInflater.from(getActivity()).
                 inflate(R.layout.timeline_something_change, null, false);
+        builder.setMessage("수정할 내용을 입력해주세요");
+
         builder.setView(view);
         EditText timeLineSomeThingEdit = view.findViewById(R.id.timeLineSomeThingEdit);
         ImageButton closeTimeLineSomeThing = view.findViewById(R.id.closeTimeLineSomeThing);

@@ -69,7 +69,9 @@ public class SplashActivity extends AppCompatActivity {
         Log.e(TAG, "startLoading: " + SaveSharedPreferences.getFirstVisitUser(SplashActivity.this));
         if (SaveSharedPreferences.getFirstVisitUser(SplashActivity.this).equals("y")) {
             SaveSharedPreferences.setFirstVisitUser(SplashActivity.this, "n");
-            startActivity(new Intent(SplashActivity.this, IntroduceParent.class));
+            Intent intent = new Intent(this, IntroduceParent.class);
+            intent.putExtra("intentType", "1");
+            startActivity(intent);
             finish();
 
         } else {

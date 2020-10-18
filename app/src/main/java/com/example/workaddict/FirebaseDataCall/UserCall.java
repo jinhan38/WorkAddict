@@ -34,7 +34,7 @@ public class UserCall {
     public UserCall(String searchKeyword, RecyclerView recyclerView,  Activity activity) {
         this.recyclerView = recyclerView;
         this.activity = activity;
-        dataCall(searchKeyword);
+        dataCall(searchKeyword.toUpperCase());
     }
 
     public void dataCall(String searchKeyword) {
@@ -51,8 +51,8 @@ public class UserCall {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                         Privacy privacy = postSnapshot.getValue(Privacy.class);
-                        if ((privacy.getId().contains(searchKeyword) || privacy.getName().contains(searchKeyword))
-                                && !privacy.getId().equals(UserInfo.getID())
+                        if ((privacy.getId().toUpperCase().contains(searchKeyword) || privacy.getName().toUpperCase().contains(searchKeyword))
+                                && !privacy.getId().toUpperCase().equals(UserInfo.getID().toUpperCase())
                                 && !followerIdCheck(privacy)) {
                             searchPrivacy.add(privacy);
                             Log.e(TAG, "onDataChange: 일치하는 정보 찾음  : ");
@@ -76,7 +76,7 @@ public class UserCall {
     private boolean followerIdCheck(Privacy privacy){
         boolean result = false;
         for (FollowerData data : BottomNavi.bottomNavi.followerData){
-            if (privacy.getId().equals(data.getId())){
+            if (privacy.getId().toUpperCase().equals(data.getId().toUpperCase())){
                 result = true;
             }
         }

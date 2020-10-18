@@ -36,6 +36,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
 import com.example.workaddict.BottomFragment.ListFragment;
+import com.example.workaddict.BottomFragment.MapFragment;
 import com.example.workaddict.BottomFragment.MyPageFragment;
 import com.example.workaddict.BottomFragment.TimeLinePage;
 import com.example.workaddict.BottomNavi;
@@ -644,9 +645,12 @@ public class Util {
                 }
 
                 if (ListFragment.singlton != null) {
+                    ListFragment.singlton.listSizeZeroCheck();
                     ListFragment.singlton.setCategoryTabLayout();
                     ListFragment.singlton.setAdapter(0);
                 }
+
+                MapFragment.singlton.categoryFilterButtonSetting();
 
             });
         }
@@ -706,6 +710,8 @@ public class Util {
 
                             }
                         }
+
+                        TimeLinePage.singlton.timelineSizeCheck();
 
                         Log.e(TAG, "addTimeLine: dismiss 직전");
                         dialog.dismiss();

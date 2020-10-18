@@ -28,6 +28,7 @@ import com.example.workaddict.BottomNavi;
 import com.example.workaddict.CustomDialog;
 import com.example.workaddict.FollowInfo.Follows;
 import com.example.workaddict.Interface.BackButton;
+import com.example.workaddict.Introduce.IntroduceParent;
 import com.example.workaddict.LoginPage;
 import com.example.workaddict.MyPageFragment.AppInfoFragment;
 import com.example.workaddict.MyPageFragment.InviteFragment;
@@ -255,8 +256,11 @@ public class MyPageFragment extends Fragment implements View.OnClickListener, Ba
                 myPageChangeFragment();
                 break;
             case R.id.appInfo:
-                myPageFragmentNum = APP_INFO_NUM;
-                myPageChangeFragment();
+                Intent intent = new Intent(getActivity(), IntroduceParent.class);
+                intent.putExtra("intentType", "2");
+                getActivity().startActivity(intent);
+//                myPageFragmentNum = APP_INFO_NUM;
+//                myPageChangeFragment();
                 break;
             case R.id.question:
                 startActivity(new Intent(getActivity(), QuestionActivity.class));

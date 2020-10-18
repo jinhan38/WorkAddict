@@ -147,6 +147,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.View
                 MapFragment.singlton.tagNum = position;
                 if (isMyCategoryList){
                     MapFragment.singlton.setClickedBottomSheetContent(MapFragment.singlton.categoryPlaceData);
+
                 }else{
                     MapFragment.singlton.setClickedBottomSheetContent(BottomNavi.placeData);
                 }

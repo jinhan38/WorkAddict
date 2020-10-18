@@ -5,10 +5,9 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:scaleType="fitEnd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
-        android:src="@drawable/introduce_1"/>
-    
+        android:scaleType="fitEnd"
+        android:src="@drawable/introduce_6"/>
 </LinearLayout>

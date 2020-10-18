@@ -74,7 +74,7 @@ public class SaveSharedPreferences {
     }
 
     public static String getMarketingAgreement(Context context){
-        return getSharedPreferences(context).getString(MARKETING_AGREEMENT, "n");
+        return getSharedPreferences(context).getString(MARKETING_AGREEMENT, "y");
     }
 
     public static void setPrefIsLogin(Context ctx, String isLogin) {

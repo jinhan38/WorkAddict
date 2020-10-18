@@ -1,6 +1,7 @@
 <resources>
     <string name="version">1.000</string>
-    <string name="app_name">WorkAddict</string>
+    <string name="app_name">일중독</string>
+    <string name="workAholic">일중독</string>
     <string name="title_activity_google_maps">Map</string>
     <string name="map">지도</string>
     <string name="list">장소목록</string>
@@ -12,7 +13,6 @@
     일중독은 문의에 포함된 개인정보를 수집 및 이용할 수 있습니다. 다만 이러한 정보는 답변을 위한 목적으로만 사용됩니다.
         더 자세한 내용은 일중독 앱의 마이페이지에 있는 개인정보 처리방침을 참고하시기 바랍니다.\n\n감사합니다.</string>
     <string name="mypage">마이페이지</string>
-    <string name="workAddict">일중독</string>
     <string name="detail_see">상세보기</string>
     <string name="addressURL">"https://dapi.kakao.com/"</string>
     <string name="navi_install">카카오내비를 설치해주세요</string>

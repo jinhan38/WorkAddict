@@ -1,7 +1,6 @@
 package com.example.workaddict.TimeLineClass;
 
 import android.Manifest;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,26 +9,17 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.media.Image;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,7 +29,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.workaddict.BottomFragment.TimeLinePage;
 import com.example.workaddict.BottomNavi;
@@ -47,19 +36,13 @@ import com.example.workaddict.BuildConfig;
 import com.example.workaddict.R;
 import com.example.workaddict.Utility.UserInfo;
 import com.example.workaddict.databinding.ActivityAddTimelineContentBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
@@ -485,6 +468,7 @@ public class AddTimeLineContent extends AppCompatActivity {
         String timeStamp = new SimpleDateFormat("HHmmss").format(new Date());
         String imageFileName = "/workaholic_" + timeStamp;
 
+//        getCacheDir()
         // 이미지가 저장될 파일 경로
 //        File storageDir = new File(Environment.getExternalStorageDirectory() + "/workaholic /");
         File storageDir = new File(Objects.requireNonNull(getExternalFilesDir(null)).toString() + "/workaholic/");

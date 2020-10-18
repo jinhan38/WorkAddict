@@ -151,7 +151,7 @@ public class MapFragment extends Fragment implements MapView.CurrentLocationEven
     /**
      * 카테고리 필터 보여주기 세팅
      */
-    private void categoryFilterButtonSetting() {
+    public void categoryFilterButtonSetting() {
 
         Log.e(TAG, "categoryFilterButtonSetting: 진입");
         if (BottomNavi.categoryData.size() > 0) {
@@ -1109,14 +1109,6 @@ public class MapFragment extends Fragment implements MapView.CurrentLocationEven
                         , "장소 추가"
                         , "");
 
-//                Util.addTimeLine(BottomNavi.categoryData.get(MapFragment.singlton.selectedCategoryPosition).getCD(),
-//                        placeName,
-//                        "",
-//                        "장소 추가",
-//                        "장소 추가", getActivity(),
-//                        TimeLinePage.singlton.adapter);
-
-                Toast.makeText(getActivity(), "추가 완료", Toast.LENGTH_SHORT).show();
 
                 if (ClickedBottomSheetContent.myBottomSheet != null)
                     ClickedBottomSheetContent.myBottomSheet.setHidden();

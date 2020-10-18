@@ -90,9 +90,9 @@ public class Follows extends AppCompatActivity {
             case R.id.menu_invite:
                 startActivity(new Intent(Follows.this, FollowInvite.class));
                 break;
-            case R.id.menu_question:
-                Toast.makeText(follows, "정보전달", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.menu_question:
+//                Toast.makeText(follows, "정보전달", Toast.LENGTH_SHORT).show();
+//                break;
             default:
                 break;
         }

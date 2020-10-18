@@ -404,7 +404,7 @@ public class FollowTimeline extends AppCompatActivity implements View.OnClickLis
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(followTimeline);
                 linearLayoutManager.setStackFromEnd(true);
                 b.followTimelineRecyclerView.setLayoutManager(linearLayoutManager);
-                adapter = new TimeLineAdapter(timeLines, false, keyword);
+                adapter = new TimeLineAdapter(timeLines, categoryData, false, keyword);
                 b.followTimelineRecyclerView.setAdapter(adapter);
             }
         }

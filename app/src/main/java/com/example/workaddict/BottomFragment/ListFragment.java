@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -32,7 +34,6 @@ import com.example.workaddict.Utility.Util;
 import com.example.workaddict.databinding.ActivityListFragmentBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,11 +82,32 @@ public class ListFragment extends Fragment implements View.OnClickListener, Back
         listFragment = this;
         b = DataBindingUtil.inflate(inflater, R.layout.activity_list_fragment, container, false);
         Log.e(TAG, "onCreateView: ");
+        listSizeZeroCheck();
         setCategoryTabLayout();
         setAdapter(0);
         setupListener();
 
         return b.getRoot();
+    }
+
+    public void listSizeZeroCheck() {
+
+        if (BottomNavi.categoryData.size() == 0) {
+            b.addCategoryFirstPage.setVisibility(View.VISIBLE);
+            b.listPageWrap.setVisibility(View.GONE);
+
+            b.addCategoryButtonFirst.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), CategoryList.class);
+                intent.putExtra("fromListPage", "y");
+                getActivity().startActivity(intent);
+            });
+
+        } else {
+
+            b.addCategoryFirstPage.setVisibility(View.GONE);
+            b.listPageWrap.setVisibility(View.VISIBLE);
+
+        }
     }
 
 
@@ -207,8 +229,8 @@ public class ListFragment extends Fragment implements View.OnClickListener, Back
     public void setAdapter(int num) {
 
         Log.e(TAG, "setAdapter: num : " + num);
-        Log.e(TAG, "setAdapter: 바텀시트 장소 사이즈 확인 : " + BottomNavi.placeData.size() );
-        Log.e(TAG, "setAdapter: 바텀시트 카테고리 사이즈 확인 : " + BottomNavi.categoryData.size() );
+        Log.e(TAG, "setAdapter: 바텀시트 장소 사이즈 확인 : " + BottomNavi.placeData.size());
+        Log.e(TAG, "setAdapter: 바텀시트 카테고리 사이즈 확인 : " + BottomNavi.categoryData.size());
         p.clear();
         pKeyList.clear();
         b.recyclerView.setHasFixedSize(true);

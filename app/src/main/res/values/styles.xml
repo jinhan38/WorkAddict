@@ -25,13 +25,16 @@
 
 
     <style name="introduceStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+<!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <item name="android:statusBarColor">@color/softPurple</item>
+        <item name="android:windowBackground">@color/softPurple</item>
+
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

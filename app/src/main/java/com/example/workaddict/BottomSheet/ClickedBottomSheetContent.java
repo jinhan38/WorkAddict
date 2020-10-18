@@ -132,14 +132,14 @@ public class ClickedBottomSheetContent {
 
         ((ImageView) fragmentActivity.findViewById(R.id.viewClip)).setImageDrawable(TimeLinePage.singlton.getResources().getDrawable(drawable));
 
-        if (isMyCategoryList) {
-
-            addPlaceWrap.setVisibility(View.INVISIBLE);
-            place_name.setTextColor(fragmentActivity.getResources().getColor(R.color.deepPurple));
-        } else {
-            addPlaceWrap.setVisibility(View.VISIBLE);
-            place_name.setTextColor(fragmentActivity.getResources().getColor(R.color.black));
-        }
+//        if (isMyCategoryList) {
+//
+//            addPlaceWrap.setVisibility(View.INVISIBLE);
+//            place_name.setTextColor(fragmentActivity.getResources().getColor(R.color.deepPurple));
+//        } else {
+//            addPlaceWrap.setVisibility(View.VISIBLE);
+//            place_name.setTextColor(fragmentActivity.getResources().getColor(R.color.black));
+//        }
 
         addPlaceWrap.setOnClickListener(v -> makeCategoryListBottomSheet());
 
