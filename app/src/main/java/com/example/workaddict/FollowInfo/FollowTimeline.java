@@ -158,6 +158,8 @@ public class FollowTimeline extends AppCompatActivity implements View.OnClickLis
                         }
                     }
 
+                    Log.e(TAG, "onTextChanged: timelinesearch : " + timeLinesSearch.size());
+                    Log.e(TAG, "onTextChanged: keyword : " + s);
                     setAdapter(timeLinesSearch, String.valueOf(s));
 
                 } else {
@@ -399,12 +401,14 @@ public class FollowTimeline extends AppCompatActivity implements View.OnClickLis
     public void setAdapter(ArrayList<TimeLine> timeLines, String keyword) {
         if (timeLines != null) {
 
+            Log.e(TAG, "setAdapter: 키워드 timelines : " + timeLines.size() );
             if (timeLines.size() > 0) {
                 b.followTimelineRecyclerView.setHasFixedSize(true);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(followTimeline);
                 linearLayoutManager.setStackFromEnd(true);
                 b.followTimelineRecyclerView.setLayoutManager(linearLayoutManager);
-                adapter = new TimeLineAdapter(timeLines, categoryData, false, keyword);
+
+                adapter = new TimeLineAdapter(b.followTimelineRecyclerView, timeLines, categoryData, false, keyword);
                 b.followTimelineRecyclerView.setAdapter(adapter);
             }
         }

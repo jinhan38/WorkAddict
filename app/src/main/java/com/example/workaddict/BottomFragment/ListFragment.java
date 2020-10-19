@@ -304,6 +304,7 @@ public class ListFragment extends Fragment implements View.OnClickListener, Back
                                 Log.e(TAG, "onSuccess: 장소리스트 하나 삭제, 해당 타임라인 삭제 성공");
                                 TimeLinePage.singlton.setTimeLineSpinner();
                                 TimeLinePage.singlton.setAdapter(BottomNavi.timeLines);
+                                TimeLinePage.singlton.timelineSizeCheck();
                                 dialog.dismiss();
                             })
                             .addOnFailureListener(e -> {

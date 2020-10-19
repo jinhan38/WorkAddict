@@ -88,6 +88,7 @@ public class MyBottomSheetCategory extends BottomSheetDialogFragment {
             builder.setPositiveButton("삭제", (dialog12, which) -> {
                 delete(dialog);
                 dialog12.dismiss();
+                ListFragment.singlton.listSizeZeroCheck();
             }).setNegativeButton("취소", (dialog1, which) -> dialog1.dismiss());
 
             final AlertDialog alertDialog = builder.create();

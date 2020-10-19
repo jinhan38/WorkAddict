@@ -480,6 +480,7 @@ public class Util {
 
     public static int getTimelineCategoryColor(ArrayList<CategoryData> categoryDataArrayList, TimeLine timeLine) {
 
+        Log.e(TAG, "getTimelineCategoryColor: categoryDataArrayList : " + categoryDataArrayList.size() );
         int drawable = 0;
 
         for (CategoryData categoryData : categoryDataArrayList) {
@@ -517,6 +518,7 @@ public class Util {
 
         }
 
+        Log.e(TAG, "getTimelineCategoryColor: darawable : " + drawable);
         return drawable;
     }
 

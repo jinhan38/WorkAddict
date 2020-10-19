@@ -2,6 +2,8 @@ package com.example.workaddict.TimeLineClass;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
@@ -125,13 +127,16 @@ public class TimeLineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      * @param isOpenCheckBox
      * @param keyword
      */
-    public TimeLineAdapter(ArrayList<TimeLine> timeline, ArrayList<CategoryData> categoryData, boolean isOpenCheckBox, String keyword) {
+    public TimeLineAdapter(RecyclerView followRecyclerView, ArrayList<TimeLine> timeline, ArrayList<CategoryData> categoryData, boolean isOpenCheckBox, String keyword) {
 
+        Log.e(TAG, "TimeLineAdapter: 키워드 생성자 timeline : " + timeline.size());
+        this.recyclerView = followRecyclerView;
         this.dateItems = initItemList(orderByTimeDesc(Util.changeTimeLineData(timeline)));
+        this.followListTimeline = timeline;
         this.isOpenCheckBox = isOpenCheckBox;
         this.keyword = keyword;
         this.followCategoryData = categoryData;
-        this.isFollowList = "n";
+        this.isFollowList = "y";
 
     }
 
@@ -403,6 +408,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                                 Log.e(TAG, "delete 타임라인 : 데이터 삭제 성공");
                                                 dateItems.remove(position);
                                                 TimeLinePage.singlton.adapter.notifyDataSetChanged();
+                                                TimeLinePage.singlton.timelineSizeCheck();
 
                                             }).addOnFailureListener(e -> {
                                         Log.e(TAG, "delete 타임라인 : 데이터 삭제 실패");
@@ -654,6 +660,8 @@ public class TimeLineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         }
 
+        Log.e(TAG, "circleChange: clickedTimelinePosition : " + clickedTimelinePosition);
+
         int drawable = Util.getTimelineCategoryColor(BottomNavi.categoryData, BottomNavi.timeLines.get(clickedTimelinePosition));
 
         dataViewHolder.timelineLeftViewBar.setImageDrawable(TimeLinePage.singlton.getResources().getDrawable(drawable));
@@ -685,36 +693,38 @@ public class TimeLineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void followCircleChange(ArrayList<DateItem> dateItems, ArrayList<CategoryData> categoryData, ArrayList<TimeLine> followTimeLines, DataViewHolder dataViewHolder, int position) {
 
 
-            ArrayList<TimeLine> timeLines = followTimeLines;
+        Log.e(TAG, "followCircleChange: followTimeLines : " + followTimeLines);
+        ArrayList<TimeLine> timeLines = followTimeLines;
+        Log.e(TAG, "followCircleChange: timelines : " + timeLines.size());
 
-            int clickedTimelinePosition = 0;
+        int clickedTimelinePosition = 0;
 
-            String clickedPositionDate = ((MyDateTime) dateItems.get(position)).getDate().substring(0, 16);
-            for (int i = 0; i < timeLines.size(); i++) {
-                if (timeLines.get(i).getPlaceName().equals(((MyDateTime) dateItems.get(position)).getPlaceName())
-                        && timeLines.get(i).getSomeThing().equals(((MyDateTime) dateItems.get(position)).getSomeThing())
-                        && timeLines.get(i).getDate().contains(clickedPositionDate)) {
-                    clickedTimelinePosition = i;
-                    break;
-                }
+        String clickedPositionDate = ((MyDateTime) dateItems.get(position)).getDate().substring(0, 16);
+        for (int i = 0; i < timeLines.size(); i++) {
+            if (timeLines.get(i).getPlaceName().equals(((MyDateTime) dateItems.get(position)).getPlaceName())
+                    && timeLines.get(i).getSomeThing().equals(((MyDateTime) dateItems.get(position)).getSomeThing())
+                    && timeLines.get(i).getDate().contains(clickedPositionDate)) {
+                clickedTimelinePosition = i;
+                break;
             }
+        }
+        
+        int drawable = Util.getTimelineCategoryColor(categoryData, followTimeLines.get(clickedTimelinePosition));
 
-            int drawable = Util.getTimelineCategoryColor(categoryData, followTimeLines.get(clickedTimelinePosition));
+        dataViewHolder.timelineLeftViewBar.setImageDrawable(parentContext.getResources().getDrawable(drawable));
+        dataViewHolder.placeNameTimeLine.setTextColor(parentContext.getColor(R.color.black));
+        dataViewHolder.date.setTextColor(parentContext.getColor(R.color.strong_gray));
+        dataViewHolder.someThingTimeLine.setTextColor(parentContext.getColor(R.color.black));
+        dataViewHolder.timelineCardView.setCardElevation(10);
 
-            dataViewHolder.timelineLeftViewBar.setImageDrawable(parentContext.getResources().getDrawable(drawable));
-            dataViewHolder.placeNameTimeLine.setTextColor(parentContext.getColor(R.color.black));
-            dataViewHolder.date.setTextColor(parentContext.getColor(R.color.strong_gray));
-            dataViewHolder.someThingTimeLine.setTextColor(parentContext.getColor(R.color.black));
-            dataViewHolder.timelineCardView.setCardElevation(10);
+        if (timeLines.get(clickedTimelinePosition).getAction().equals("y")) {
+            dataViewHolder.timelineLeftViewBar.setImageDrawable(parentContext.getResources().getDrawable(R.drawable.back_gray_round_3dp));
+            dataViewHolder.placeNameTimeLine.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
+            dataViewHolder.date.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
+            dataViewHolder.someThingTimeLine.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
+            dataViewHolder.timelineCardView.setCardElevation(0);
 
-            if (timeLines.get(clickedTimelinePosition).getAction().equals("y")) {
-                dataViewHolder.timelineLeftViewBar.setImageDrawable(parentContext.getResources().getDrawable(R.drawable.back_gray_round_3dp));
-                dataViewHolder.placeNameTimeLine.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
-                dataViewHolder.date.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
-                dataViewHolder.someThingTimeLine.setTextColor(parentContext.getColor(R.color.middleSoft_gray));
-                dataViewHolder.timelineCardView.setCardElevation(0);
-
-            }
+        }
 
 
     }
