@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/softPurple"
     android:orientation="vertical"
-    tools:context=".Introduce.IntroduceParent">
+    tools:context="kr.co.workaddict.Introduce.IntroduceParent">
 
 
     <FrameLayout

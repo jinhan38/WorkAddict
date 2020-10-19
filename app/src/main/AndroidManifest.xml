@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.workaddict">
+    package="kr.co.workaddict">
 
     
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -17,7 +17,7 @@
 
 
     <application
-        android:name=".MasterApplication"
+        android:name="kr.co.workaddict.MasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_launcher"
         android:label="@string/app_name"
@@ -29,14 +29,14 @@
         tools:targetApi="n">
 
         <activity
-            android:name=".Introduce.IntroduceParent"
+            android:name="kr.co.workaddict.Introduce.IntroduceParent"
             android:theme="@style/introduceStyle" />
-        <activity android:name=".MyPageFragment.ShowTermsText" />
-        <activity android:name=".FollowInfo.FollowTimeline" />
+        <activity android:name="kr.co.workaddict.MyPageFragment.ShowTermsText" />
+        <activity android:name="kr.co.workaddict.FollowInfo.FollowTimeline" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.workaddict.provider"
+            android:authorities="kr.co.workaddict.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -44,23 +44,23 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".Login.GoogleLogin" />
-        <activity android:name=".MyPageFragment.SettingFragment" />
-        <activity android:name=".BottomFragment.TimeLinePage" />
+        <activity android:name="kr.co.workaddict.Login.GoogleLogin" />
+        <activity android:name="kr.co.workaddict.MyPageFragment.SettingFragment" />
+        <activity android:name="kr.co.workaddict.BottomFragment.TimeLinePage" />
         <activity
-            android:name=".FollowInfo.FollowInvite"
+            android:name="kr.co.workaddict.FollowInfo.FollowInvite"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ShowMyPlaceDetailInfo"
+            android:name="kr.co.workaddict.ShowMyPlaceDetailInfo"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".FollowInfo.Follows"
+            android:name="kr.co.workaddict.FollowInfo.Follows"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".CategoryList"
+            android:name="kr.co.workaddict.CategoryList"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".RegisterPageTerms"
+            android:name="kr.co.workaddict.RegisterPageTerms"
             android:windowSoftInputMode="adjustResize" />
 
         <uses-library
@@ -68,7 +68,7 @@
             android:required="false" />
 
         <activity
-            android:name=".BottomNavi"
+            android:name="kr.co.workaddict.BottomNavi"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -81,8 +81,8 @@
                     android:scheme="kakao{f6fab5520c90e13c1e8208b493976c4a}" />
             </intent-filter>
         </activity>
-        <activity android:name=".TimeLineClass.AddTimeLineContent" />
-        <activity android:name=".SplashActivity">
+        <activity android:name="kr.co.workaddict.TimeLineClass.AddTimeLineContent" />
+        <activity android:name="kr.co.workaddict.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -90,17 +90,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Registration"
+            android:name="kr.co.workaddict.Registration"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".MyPageFragment.QuestionActivity"
+            android:name="kr.co.workaddict.MyPageFragment.QuestionActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".LoginPage"
+            android:name="kr.co.workaddict.LoginPage"
             android:windowSoftInputMode="adjustResize" />
 
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name="kr.co.workaddict.MyFirebaseMessagingService"
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="false">

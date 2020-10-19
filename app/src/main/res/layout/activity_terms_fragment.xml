@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".MyPageFragment.TermsFragment">
+            tools:context="kr.co.workaddict.MyPageFragment.TermsFragment">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/termsFirstWrap"

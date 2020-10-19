@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/basic_background"
     android:orientation="vertical"
-    tools:context=".BottomFragment.TimeLinePage">
+    tools:context="kr.co.workaddict.BottomFragment.TimeLinePage">
 
 
     <FrameLayout
