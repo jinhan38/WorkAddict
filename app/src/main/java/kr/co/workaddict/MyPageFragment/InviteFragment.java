@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
@@ -18,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
@@ -26,10 +28,13 @@ import kr.co.workaddict.R;
 import kr.co.workaddict.Utility.UserInfo;
 import kr.co.workaddict.Utility.Util;
 import kr.co.workaddict.databinding.ActivityInviteFragmentBinding;
+
 import com.kakao.kakaolink.v2.KakaoLinkResponse;
 import com.kakao.kakaolink.v2.KakaoLinkService;
 import com.kakao.network.ErrorResult;
 import com.kakao.network.callback.ResponseCallback;
+
+import org.apache.http.protocol.HTTP;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +45,7 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
     private ActivityInviteFragmentBinding b;
 
     private static final String TAG = "InviteFragment";
-    private static final int SMS_PERMISSION = 1000;
+//    private static final int SMS_PERMISSION = 1000;
     private static final int ADDRESS_BOOK_PERMISSION = 1001;
     private String addressBookPhoneNum = "";
     private String addressBookName = "";
@@ -80,33 +85,13 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.sendSMS:
 
-                if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-                    Log.e(TAG, "문자 발송 권한 요청");
-                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.SEND_SMS}, SMS_PERMISSION);
+                openAddressBook();
 
-                } else {
-                    //권한 허용했으면 주소록 오픈
-                    openAddressBook();
-
-                }
                 break;
         }
     }
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        Log.e(TAG, "onRequestPermissionsResult: 문자 궎한 허용 요청" + requestCode);
-        switch (requestCode) {
-            case SMS_PERMISSION:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openAddressBook();
-                } else {
-                    Toast.makeText(getActivity(), "권한을 거부하였습니다", Toast.LENGTH_SHORT).show();
-                }
-        }
-    }
 
 
     private void openAddressBook() {
@@ -134,7 +119,7 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
 
                 addressBookName = cursor.getString(0);     //0은 이름
                 addressBookPhoneNum = cursor.getString(1);   //1은 번호
-                Log.e(TAG, "onActivityResult: addressBookPhoneNum : " + addressBookPhoneNum );
+                Log.e(TAG, "onActivityResult: addressBookPhoneNum : " + addressBookPhoneNum);
 
                 addressBookPhoneNum = addressBookPhoneNum.replaceAll("-", "");
 
@@ -150,12 +135,14 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
                         try {
                             byte[] contentBytes = content.getBytes("KSC5601");
 
+                            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + addressBookPhoneNum ));
+                            intent.putExtra("sms_body", new String(contentBytes, "KSC5601"));
+                            startActivity(intent);
 
-                            SmsManager smsManager = SmsManager.getDefault();
-                            smsManager.sendTextMessage(addressBookPhoneNum, null,
-                                    new String(contentBytes, "KSC5601"), null, null);
+                            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                                startActivity(intent);
+                            }
 
-                            Toast.makeText(getActivity(), addressBookName + "님을 초대했습니다.", Toast.LENGTH_LONG).show();
                         } catch (Exception e) {
                             Toast.makeText(getActivity(), "전송 오류가 발생했습니다. 다시 시도해주시기 바랍니다.", Toast.LENGTH_LONG).show();
                             e.printStackTrace();
@@ -177,8 +164,6 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
 
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
 
 
     public void kakao() {

@@ -25,7 +25,7 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
     private ActivityQuestionBinding b;
     private BottomSheetBehavior behavior;
     private FAQPhoneBottomSheet faqPhoneBottomSheet;
-    private static final int PHONE_CALL_PERMISSION = 333;
+//    private static final int PHONE_CALL_PERMISSION = 333;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,40 +85,42 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
 
     private View.OnClickListener positiveListener = v -> {
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_PERMISSION);
+        connectPhone();
 
-        } else {
-
-            connectPhone();
-
-        }
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_PERMISSION);
+//
+//        } else {
+//
+//            connectPhone();
+//
+//        }
 
     };
 
     private void connectPhone() {
         String company_tel = "tel:01030890122";
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(company_tel));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(company_tel));
         startActivity(intent);
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     }
 
-    private View.OnClickListener negativeListener = v -> {
+    private final View.OnClickListener negativeListener = v -> {
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     };
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == PHONE_CALL_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                connectPhone();
-            } else {
-                Toast.makeText(this, "권한을 거부하였습니다", Toast.LENGTH_SHORT).show();
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        if (requestCode == PHONE_CALL_PERMISSION) {
+//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                connectPhone();
+//            } else {
+//                Toast.makeText(this, "권한을 거부하였습니다", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//    }
 
     @Override
     public void onBackPressed() {

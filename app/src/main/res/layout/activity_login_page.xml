@@ -20,7 +20,6 @@
             <LinearLayout
                 android:id="@+id/loginViewWrap"
                 android:layout_width="match_parent"
-                android:background="@color/basic_background"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 tools:visibility="visible">
@@ -143,21 +142,21 @@
                     android:textSize="@dimen/font_title_x" />
 
                 <View
-                    android:layout_marginTop="30dp"
-                    android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/soft_gray"/>
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/soft_gray" />
 
                 <Button
                     android:id="@+id/googleLoginButton"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginHorizontal="40dp"
-                    android:elevation="20dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/btn_selector_purple"
                     android:drawableLeft="@drawable/google_icon_30"
+                    android:elevation="20dp"
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="45dp"
@@ -170,15 +169,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginHorizontal="40dp"
-                    android:elevation="20dp"
                     android:layout_marginTop="10dp"
                     android:background="#3b5998"
-                    android:textColor="@color/white"
                     android:drawableStart="@drawable/facebook_icon_30"
+                    android:elevation="20dp"
                     android:gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="45dp"
                     android:text="페이스북 로그인"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_title" />
 
                 <Button
@@ -203,14 +202,14 @@
                     android:layout_marginHorizontal="40dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
-                    android:elevation="20dp"
                     android:background="#00bf18"
                     android:drawableStart="@drawable/naver_icon_45"
+                    android:elevation="20dp"
                     android:gravity="center"
-                    android:textColor="@color/white"
                     android:paddingLeft="12dp"
                     android:paddingRight="48dp"
                     android:text="네이버 로그인"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_title" />
 
 
