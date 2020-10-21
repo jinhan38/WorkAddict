@@ -87,15 +87,6 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
 
         connectPhone();
 
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_PERMISSION);
-//
-//        } else {
-//
-//            connectPhone();
-//
-//        }
-
     };
 
     private void connectPhone() {
@@ -109,18 +100,6 @@ public class QuestionActivity extends AppCompatActivity implements View.OnClickL
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
     };
 
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        if (requestCode == PHONE_CALL_PERMISSION) {
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                connectPhone();
-//            } else {
-//                Toast.makeText(this, "권한을 거부하였습니다", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//    }
 
     @Override
     public void onBackPressed() {
