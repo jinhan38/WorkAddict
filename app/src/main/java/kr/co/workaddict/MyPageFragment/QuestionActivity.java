@@ -22,7 +22,7 @@ import kr.co.workaddict.databinding.ActivityQuestionBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public class QuestionActivity extends AppCompatActivity implements View.OnClickListener {
-    private ActivityQuestionBinding b;
+    private ActivityQuestionBinding b;                               
     private BottomSheetBehavior behavior;
     private FAQPhoneBottomSheet faqPhoneBottomSheet;
 //    private static final int PHONE_CALL_PERMISSION = 333;
