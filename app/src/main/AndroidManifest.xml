@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="kr.co.workaddict">
 
-    
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -37,9 +37,11 @@
             android:authorities="kr.co.workaddict.provider"
             android:exported="false"
             android:grantUriPermissions="true">
+
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
+            
         </provider>
 
         <activity android:name="kr.co.workaddict.Login.GoogleLogin" />
@@ -80,6 +82,7 @@
             </intent-filter>
         </activity>
         <activity android:name="kr.co.workaddict.TimeLineClass.AddTimeLineContent" />
+
         <activity android:name="kr.co.workaddict.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -87,6 +90,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="kr.co.workaddict.Registration"
             android:windowSoftInputMode="adjustResize" />

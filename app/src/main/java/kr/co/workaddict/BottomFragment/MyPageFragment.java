@@ -132,6 +132,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener, Ba
         BottomNavi.bottomNavi.b.toolbarLogout.setOnClickListener(this);
         b.profile.setOnClickListener(this);
         b.invite.setOnClickListener(this);
+        b.versionUpdate.setOnClickListener(this);
 
         profileDelete();
 
@@ -140,7 +141,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener, Ba
 
     public void versionCheck() {
         if (getString(R.string.version).equals(UserInfo.getVersion())) {
-            b.versionUpdate.setEnabled(false);
+            b.versionUpdate.setEnabled(true);
             b.versionUpdate.setText("최신버전 사용중");
             b.versionUpdate.setTextColor(getResources().getColor(R.color.middle_gray));
         } else {
@@ -278,6 +279,12 @@ public class MyPageFragment extends Fragment implements View.OnClickListener, Ba
             case R.id.profile:
                 requestPermission();
                 break;
+            case R.id.versionUpdate:
+                Intent intentUpdate = new Intent(Intent.ACTION_VIEW);
+                intentUpdate.setData(Uri.parse(
+                        "https://play.google.com/store/apps/details?id=kr.co.workaddict"));
+                intentUpdate.setPackage("kr.co.workaddict");
+                startActivity(intentUpdate);
             default:
                 break;
 

@@ -8,49 +8,36 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:478805682864:android:e64abd2795a1384f22e975",
-        "android_client_info": {
-          "package_name": "com.example.workaddict"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "478805682864-ban6h47b51qjtho25h9gmqu13jeg5364.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.workaddict",
-            "certificate_hash": "431edf9636f180d7324e7e8402125eb2a1fd80f8"
-          }
-        },
-        {
-          "client_id": "478805682864-auf8tkj6kat27p5eqsppc71al0fbpr0k.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCdr6nL-HONzDVICwgwLGw6PtiuPlAc5y0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "478805682864-auf8tkj6kat27p5eqsppc71al0fbpr0k.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:478805682864:android:e23568a6959c38c522e975",
         "android_client_info": {
           "package_name": "kr.co.workaddict"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "478805682864-f9g3708bn7m1fnljti4rt3n4pn3p5itm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.workaddict",
+            "certificate_hash": "431edf9636f180d7324e7e8402125eb2a1fd80f8"
+          }
+        },
+        {
+          "client_id": "478805682864-tfufvuv8569lhni9vg6qqt59ii3kg5in.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.workaddict",
+            "certificate_hash": "605aa9521137afd10e8e4086ad39c277f1ea5fd8"
+          }
+        },
+        {
+          "client_id": "478805682864-f0rsq4t5bcmif2jm8fdf4jkdkv6943pm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.workaddict",
+            "certificate_hash": "14640800c0fc3bb20ccbeb7ba24cb8b643c4aa0e"
+          }
+        },
         {
           "client_id": "478805682864-auf8tkj6kat27p5eqsppc71al0fbpr0k.apps.googleusercontent.com",
           "client_type": 3

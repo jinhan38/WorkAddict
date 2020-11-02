@@ -31,6 +31,7 @@ import kr.co.workaddict.R;
 
 import kr.co.workaddict.Utility.UserInfo;
 import kr.co.workaddict.Utility.Util;
+
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -123,7 +124,8 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
         loginPage = this;
 //        Util.saveContext(this);
-        getKeyHash(this);
+        Log.d(TAG, "onCreate: hashKey" + getKeyHash(this));
+
         mAuth = FirebaseAuth.getInstance();
         SaveSharedPreferences.setPrefIsLogin(this, "n");
 

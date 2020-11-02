@@ -13,8 +13,8 @@ android {
         applicationId "kr.co.workaddict"
         minSdkVersion 26
         targetSdkVersion 29
-        versionCode 2
-        versionName "1.002"
+        versionCode 3
+        versionName "1.003"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
