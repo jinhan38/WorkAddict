@@ -149,16 +149,6 @@ public class LoginPage extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
 
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo("kr.co.workaddict", PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
 
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnSuccessListener(LoginPage.this, instanceIdResult -> {

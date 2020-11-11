@@ -26,7 +26,6 @@ public class CustomViewPager extends ViewPager {
             return super.onInterceptTouchEvent(ev);
         } else {
             if (MotionEventCompat.getActionMasked(ev) == MotionEvent.ACTION_MOVE) {
-// ignore move action
             } else {
                 if (super.onInterceptTouchEvent(ev)) {
                     super.onTouchEvent(ev);

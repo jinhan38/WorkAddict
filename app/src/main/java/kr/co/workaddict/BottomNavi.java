@@ -1,7 +1,11 @@
 package kr.co.workaddict;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,6 +19,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.co.workaddict.BottomFragment.ListFragment;
 import kr.co.workaddict.BottomFragment.MapFragment;
@@ -30,19 +44,9 @@ import kr.co.workaddict.DataClass.PressedAddress;
 import kr.co.workaddict.DataClass.Privacy;
 import kr.co.workaddict.DataClass.TimeLine;
 import kr.co.workaddict.Interface.BackButton;
-
-import kr.co.workaddict.R;
-
 import kr.co.workaddict.Utility.UserInfo;
 import kr.co.workaddict.Utility.Util;
 import kr.co.workaddict.databinding.ActivityBottomNaviBinding;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BottomNavi extends AppCompatActivity implements View.OnClickListener {
 
@@ -70,6 +74,7 @@ public class BottomNavi extends AppCompatActivity implements View.OnClickListene
     public boolean result = false;
     private boolean viewCreated = false;
 
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         if (hasFocus) {
@@ -84,14 +89,19 @@ public class BottomNavi extends AppCompatActivity implements View.OnClickListene
         bottomNavi = this;
         b = DataBindingUtil.setContentView(this, R.layout.activity_bottom_navi);
 
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("kr.co.workaddict", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
-//        BottomNavigationView navView = findViewById(R.id.nav_view);
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.map, R.id.list, R.id.timeLine, R.id.myPage)
-//                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        NavigationUI.setupWithNavController(navView, navController);
+        String keyHash = com.kakao.util.helper.Utility.getKeyHash(this);
+        Log.e(TAG, "onCreate: 키해시 : " + keyHash);
 
 
         b.progressWrap.setVisibility(View.VISIBLE);
@@ -131,9 +141,20 @@ public class BottomNavi extends AppCompatActivity implements View.OnClickListene
         }
 
 
+        getReleaseHashKey();
         setupListener();
     }
 
+
+    //https://puch-android.tistory.com/6
+    private void getReleaseHashKey() {
+        byte[] sha1 = {
+                0x60, 0x5a, (byte) 0xa9, 0x52, 0x11, 0x37, (byte) 0xaf, (byte) 0xd1, (byte) 0x0e,
+                (byte) 0x8e, 0x40, (byte) 0x86, (byte) 0xad, 0x39, (byte) 0xc2, 0x77, (byte) 0xf1, (byte) 0xea, 0x5f, (byte) 0xd8
+
+        };
+        Log.i(TAG, "구글 사이닝 getReleaseHashKey: " + Base64.encodeToString(sha1, Base64.NO_WRAP));
+    }
 
     private void initView() {
 
